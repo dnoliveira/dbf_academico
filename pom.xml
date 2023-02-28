@@ -15,6 +15,7 @@
 	<description>Sistema acadêmico do CEFET</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<jdbi.version>3.34.0</jdbi.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,6 +33,16 @@
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+                <dependency>
+			<groupId>org.jdbi</groupId>
+			<artifactId>jdbi3-core</artifactId>
+			<version>${jdbi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdbi</groupId>
+			<artifactId>jdbi3-sqlobject</artifactId>
+			<version>${jdbi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
