@@ -5,7 +5,9 @@
 package br.cefet.academico.service;
 
 import br.cefet.academico.dao.AlunoDao;
+import br.cefet.academico.dao.AlunoTelefoneDao;
 import br.cefet.academico.model.Aluno;
+import br.cefet.academico.model.AlunoTelefone;
 import java.util.List;
 import org.jdbi.v3.core.Jdbi;
 import org.springframework.stereotype.Service;
@@ -18,9 +20,11 @@ import org.springframework.stereotype.Service;
 public class AlunoService {
     
     private final AlunoDao alunoDao;
+    private final AlunoTelefoneDao alunoTelefoneDao; 
     
     public AlunoService(Jdbi jdbi){
         this.alunoDao = jdbi.onDemand(AlunoDao.class);
+        this.alunoTelefoneDao = jdbi.onDemand(AlunoTelefoneDao.class);
     }
     
     public Aluno inserir (Aluno aluno){
@@ -30,11 +34,23 @@ public class AlunoService {
     }
     
     public List<Aluno> consultarTodos(){
-        return alunoDao.getAll();
+        List<Aluno> alunoList = alunoDao.getAll();
+        
+        for (Aluno aluno : alunoList) {
+            List<AlunoTelefone> alunoTelefoneList = alunoTelefoneDao.getAllByAluno(aluno.getId());
+            aluno.setTelefones(alunoTelefoneList);
+        }
+        
+        return alunoList;
     }
     
     public Aluno consultarPorId(int id){
-        return alunoDao.get(id);
+        Aluno aluno = alunoDao.get(id);
+        if (aluno != null){
+            List<AlunoTelefone> alunoTelefoneList = alunoTelefoneDao.getAllByAluno(aluno.getId());
+            aluno.setTelefones(alunoTelefoneList);
+        }
+        return aluno;
     }
     
     public void alterar(Aluno aluno){

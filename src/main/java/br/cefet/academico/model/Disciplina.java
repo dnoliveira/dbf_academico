@@ -20,10 +20,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Aluno {
+public class Disciplina {
     private int id;
-    private String nome;
-    private int idade;
-    
-    private List<AlunoTelefone> telefones;
+    private String descricao;
 }

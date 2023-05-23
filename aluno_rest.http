@@ -2,3 +2,9 @@
 GET http://localhost:8087/api/v1/aluno
 Content-Type: application/json
 ###
+
+
+#GET
+GET http://localhost:8087/api/v1/aluno/2
+Content-Type: application/json
+###
