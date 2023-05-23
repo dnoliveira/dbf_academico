@@ -1,0 +1,4 @@
+#GET
+GET http://localhost:8087/api/v1/aluno
+Content-Type: application/json
+###

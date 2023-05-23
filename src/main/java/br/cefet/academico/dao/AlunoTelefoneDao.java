@@ -43,9 +43,9 @@ public interface AlunoTelefoneDao {
 
 
     @SqlUpdate("update aluno_telefone " +
-            " set telefone = :telefone, " +
+            " set telefone = :telefone " +
             " where id = :id;")
-    int update(@BindBean AlunoTelefone aluno);
+    int update(@BindBean AlunoTelefone alunoTelefone);
 
     
     @SqlUpdate("delete " +

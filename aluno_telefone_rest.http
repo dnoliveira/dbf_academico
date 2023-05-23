@@ -1,0 +1,28 @@
+#GET
+GET http://localhost:8087/api/v1/alunotelefone/1
+Content-Type: application/json
+###
+
+#GET
+GET http://localhost:8087/api/v1/alunotelefone
+Content-Type: application/json
+###
+
+#POST
+POST http://localhost:8087/api/v1/alunotelefone
+Content-Type: application/json
+
+{
+    "idAluno": 1,
+    "telefone": "31988112200"
+}
+###
+
+PUT http://localhost:8087/api/v1/alunotelefone
+Content-Type: application/json
+
+{
+    "id": 5,
+    "telefone": "31933112200"
+}
+
