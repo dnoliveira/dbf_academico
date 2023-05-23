@@ -52,7 +52,7 @@ public class AlunoController {
     }
     
     @DeleteMapping("/{id}")
-    public Aluno alterar(@PathVariable("id") int id){
+    public Aluno deletar(@PathVariable("id") int id){
         Aluno aluno = alunoService.consultarPorId(id);
         if (aluno == null){
             throw new RuntimeException("Nao existe aluno com este id para ser excluido....");
