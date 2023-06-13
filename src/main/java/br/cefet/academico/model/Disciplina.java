@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 /**
  *
@@ -17,10 +18,11 @@ import lombok.ToString;
  */
 @Setter
 @Getter
+@ToString
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class Disciplina {
-    private int id;
-    private String descricao;
+    protected int id;
+    protected String descricao;
 }

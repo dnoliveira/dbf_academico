@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author dougl
  */
 @RestController
-@RequestMapping("/api/v1/aluno")
+@RequestMapping("/api/v1/disciplina")
 public class DisciplinaController {
     
     private final DisciplinaService disciplinaService;

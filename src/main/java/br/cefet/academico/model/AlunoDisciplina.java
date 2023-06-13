@@ -4,24 +4,19 @@
  */
 package br.cefet.academico.model;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-/**
- *
- * @author dougl
- */
-@Data
+@Getter
+@Setter
+@ToString
 @SuperBuilder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Aluno {
-    protected int id;
-    protected String nome;
-    protected int idade;
-    
-    protected List<AlunoTelefone> telefones;
+@AllArgsConstructor
+public class AlunoDisciplina extends Disciplina{
+    private int idAluno;
 }

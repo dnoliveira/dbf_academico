@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "idAluno": 1,
-    "telefone": "31988112200"
+    "telefone": "32988112200"
 }
 ###
 
@@ -22,7 +22,7 @@ PUT http://localhost:8087/api/v1/alunotelefone
 Content-Type: application/json
 
 {
-    "id": 5,
-    "telefone": "31933112200"
+    "id": 6,
+    "telefone": "33933112200"
 }
 
