@@ -44,7 +44,7 @@ public class DisciplinaAlunoController {
         return aluno;
     }
     
-    @PostMapping({"", "/"})
+    @DeleteMapping({"", "/"})
     public List<Aluno> deletar(@PathVariable("idDisc") int idDisc){
         List<Aluno> alunoList = disciplinaAlunoService.getByDisciplina(idDisc);
         if (alunoList == null || alunoList.isEmpty()){

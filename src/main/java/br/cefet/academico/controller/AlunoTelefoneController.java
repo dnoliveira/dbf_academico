@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author dougl
  */
 @RestController
-@RequestMapping("/api/v1/alunotelefone")
+@RequestMapping("/api/v1/aluno/{idAluno}/telefone")
 public class AlunoTelefoneController {
     private final AlunoTelefoneService alunoTelefoneService;
     
@@ -27,13 +27,13 @@ public class AlunoTelefoneController {
     }
     
     @GetMapping({"/", ""})
-    public List<AlunoTelefone> consultarTodos(){
-        List<AlunoTelefone> alunoList = alunoTelefoneService.consultarTodos();
+    public List<AlunoTelefone> consultarTodos(@PathVariable("idAluno") int idAluno){
+        List<AlunoTelefone> alunoList = alunoTelefoneService.consultarPorIdAluno(idAluno);
         return alunoList;
     }
     
     @GetMapping("/{id}")
-    public AlunoTelefone consultarAluno(@PathVariable("id") int id){
+    public AlunoTelefone consultar(@PathVariable("id") int id){
         AlunoTelefone ret = alunoTelefoneService.consultarPorId(id);
         return ret;
     }

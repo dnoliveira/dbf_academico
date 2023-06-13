@@ -24,7 +24,7 @@ public interface DisciplinaAlunoDao {
             " from aluno a, aluno_disciplina ad " +
             " where ad.idAluno = a.id " +
             "   and ad.idDisciplina = :idDisciplina " +
-            "   and ad.id = :idAluno;")
+            "   and ad.idAluno = :idAluno;")
     Aluno get(@Bind("idDisciplina") int idDisciplina, @Bind("idAluno") int idAluno);
 
     @SqlQuery("select * " +
